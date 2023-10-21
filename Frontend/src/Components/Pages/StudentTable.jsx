@@ -18,7 +18,7 @@ function StudentTable() {
     await axios
       .get(`${BACKEND_BASE_URL}/studentdata/${teacherId}/`)
       .then((res) => {
-        console.log(res,"changes made data");
+       
         setData(res.data);
       })
       .catch((error) => {
@@ -32,12 +32,12 @@ function StudentTable() {
         teacher_id: teacherId,
         student_id: studentId,
       });
-      console.log(response, 'data coming');
+   
       toast.success("certificate generated")
       fetchData();
     } catch (error) {
       toast.error("failed to generate")
-      console.log(error, 'errors');
+    
     }
   };
 

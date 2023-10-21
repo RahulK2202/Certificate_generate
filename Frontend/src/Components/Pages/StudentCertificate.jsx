@@ -10,13 +10,13 @@ const StudentCertificate = ({ studentName, teacherName, issueDate }) => {
     const [data, setData] = useState([]);
     const { teacherId, studentId } = useParams();
 
-    console.log(teacherId, studentId ,"both here");
+   
     
     useEffect(() => {
         const fetchCertificateData = async () => {
           try {
             const response = await axios.get(`${BACKEND_BASE_URL}/api/getcertificate/${teacherId}/${studentId}/`);
-            console.log(response.data,"certificateeeeee");
+         
             setData(response.data);
           } catch (error) {
             console.error("Error fetching certificate data:", error);

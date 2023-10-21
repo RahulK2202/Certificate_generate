@@ -10,17 +10,14 @@ import axios from "axios";
 
 function TeacherDetail() {
   const navigate = useNavigate();
-  // const handleclick = () => {
-  //     navigate('/student');
-  //   };
-
+ 
   const [data, setData] = useState([]);
 
   const fetchData = async () => {
     await axios
       .get(`${BACKEND_BASE_URL}/display/`)
       .then((res) => {
-        console.log(res, "data coming");
+       
 
         setData(res.data);
       })

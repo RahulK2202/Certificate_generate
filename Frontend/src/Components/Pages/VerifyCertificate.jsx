@@ -10,13 +10,13 @@ function VerifyCertificate() {
 
   const handleVerifyCertificate = () => {
 
-    console.log(certificateCode,"ciodeeeeeees");
+
  
     axios
       .get(`${BACKEND_BASE_URL}/verifycertificate/${certificateCode}/`)
       .then((response) => {
         const data = response.data;
-        console.log( data,"this dataaaaaa");
+      
         if (data.message) {
           toast.success(data.message); 
           setCertificateCode("")
@@ -26,7 +26,7 @@ function VerifyCertificate() {
       })
       .catch((error) => {
         toast.error("An error occurred while verifying the certificate");
-        console.error('Error verifying certificate:', error);
+       
       });
   };
 

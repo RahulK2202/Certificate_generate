@@ -22,7 +22,7 @@ function StudentTeacher() { // Added "function" keyword here
     axios.get(`${BACKEND_BASE_URL}/api/teacher/${student.id}`)
       .then((response) => {
         setTeacherDetails(response.data);
-        console.log("Teacher Details:", response.data); // Add this line to log the teacher data
+    
       })
       .catch((error) => console.error(error));
   };
