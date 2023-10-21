@@ -41,10 +41,10 @@ class CreateCertificate(APIView):
     
 
     def post(self, request):
-        print("helloo")
+      
         teacher_id = request.data.get('teacher_id')
         student_id = request.data.get('student_id')
-        print( teacher_id,student_id,"gggggg")
+    
       
 
         try:
@@ -76,7 +76,7 @@ class VerifyCertificate(APIView):
     def get(self, request,certificate_id):
         try:
             certificate = Certificate.objects.get(certificate_id=certificate_id)
-            print( certificate,"hhhhh")
+         
             decoded = jwt.decode(certificate.jwt_token, settings.SECRET_KEY, algorithms=['HS256'])
             teacher_id = decoded['teacher_id']
             student_id = decoded['student_id']
